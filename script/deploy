@@ -3,6 +3,8 @@
 branch=$1
 branch=${branch##*/}
 
+echo $branch
+
 dir="hello-jenkins"
 if [[ -n $branch && $branch != "master" ]]; then
 	dir=${branch##*/}
