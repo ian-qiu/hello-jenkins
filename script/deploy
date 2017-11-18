@@ -1,7 +1,15 @@
 #!/bin/sh
+
+branch=$1
+branch=${branch##*/}
+
+dir="hello-jenkins"
+if [[ -n $branch && $branch != "master" ]]; then
+	dir=${branch##*/}
+fi
  
 ssh xxx@172.18.37.198 <<EOF
-  cd ~/hello-jenkins
+  cd ~/${dir}
   git pull
   npm install --production
   forever restartall
