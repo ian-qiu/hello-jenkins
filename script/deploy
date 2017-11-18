@@ -6,7 +6,7 @@ branch=${branch##*/}
 echo $branch
 
 dir="hello-jenkins"
-if [ -n $branch ] && [ $branch != "master" ]; then
+if [ -n $branch ] && [ $branch -ne "master" ]; then
 	dir=${branch##*/}
 fi
  
